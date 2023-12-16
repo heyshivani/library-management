@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #eee;
+            padding: 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: auto;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input, button {
+            margin-bottom: 16px;
+            padding: 8px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <nav>
+        <button onclick="showMemberships()">Manage Memberships</button>
+        <button onclick="showUsers()">Manage Users</button>
+        <button onclick="showVendors()">Manage Vendors</button>
+    </nav>
+
+    <section id="memberships-section" style="display: none;">
+        <h2>Manage Memberships</h2>
+        <form id="memberships-form">
+            <label for="membershipName">Membership Name:</label>
+            <input type="text" id="membershipName" required>
+            <label for="membershipPrice">Membership Price:</label>
+            <input type="number" id="membershipPrice" required>
+            <button type="button" onclick="addMembership()">Add Membership</button>
+        </form>
+    </section>
+
+    <section id="users-section" style="display: none;">
+        <h2>Manage Users</h2>
+        <!-- Add user management form here -->
+    </section>
+
+    <section id="vendors-section" style="display: none;">
+        <h2>Manage Vendors</h2>
+        <!-- Add vendor management form here -->
+    </section>
+
+    <script>
+        function showMemberships() {
+            hideAllSections();
+            document.getElementById('memberships-section').style.display = 'block';
+        }
+
+        function showUsers() {
+            hideAllSections();
+            document.getElementById('users-section').style.display = 'block';
+        }
+
+        function showVendors() {
+            hideAllSections();
+            document.getElementById('vendors-section').style.display = 'block';
+        }
+
+        function hideAllSections() {
+            document.getElementById('memberships-section').style.display = 'none';
+            document.getElementById('users-section').style.display = 'none';
+            document.getElementById('vendors-section').style.display = 'none';
+        }
+
+        function addMembership() {
+            // Add logic to handle membership addition (e.g., send data to the server)
+            alert('Membership added!');
+        }
+    </script>
+
+</body>
+</html>
+
